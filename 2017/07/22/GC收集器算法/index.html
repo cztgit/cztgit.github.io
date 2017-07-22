@@ -6,14 +6,68 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | tiemuzhen</title>
+  <title>tiemuzhen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="title: GC 参数date: 2017-02-13 13:24:09tags:
+
+GC 参数
+串行收集器
+
+-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
+
+
+并行收集
+
+-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。
+-XX:ParallelGCThreads 限制线程数量。
+
+
+Parallel收集器
+
+新生">
+<meta property="og:type" content="article">
 <meta property="og:title" content="tiemuzhen">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/07/22/GC收集器算法/index.html">
 <meta property="og:site_name" content="tiemuzhen">
+<meta property="og:description" content="title: GC 参数date: 2017-02-13 13:24:09tags:
+
+GC 参数
+串行收集器
+
+-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
+
+
+并行收集
+
+-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。
+-XX:ParallelGCThreads 限制线程数量。
+
+
+Parallel收集器
+
+新生">
+<meta property="og:image" content="http://yoursite.com/images/Lucene.jpg">
+<meta property="og:updated_time" content="2017-07-22T14:53:28.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tiemuzhen">
+<meta name="twitter:description" content="title: GC 参数date: 2017-02-13 13:24:09tags:
+
+GC 参数
+串行收集器
+
+-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
+
+
+并行收集
+
+-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。
+-XX:ParallelGCThreads 限制线程数量。
+
+
+Parallel收集器
+
+新生">
+<meta name="twitter:image" content="http://yoursite.com/images/Lucene.jpg">
   
     <link rel="alternative" href="/atom.xml" title="tiemuzhen" type="application/atom+xml">
   
@@ -131,249 +185,186 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-GC收集器算法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: GC 参数<br>date: 2017-02-13 13:24:09<br>tags:</p>
+<p><img src="/images/Lucene.jpg" alt=""></p>
+<h1 id="GC-参数"><a href="#GC-参数" class="headerlink" title="GC 参数"></a>GC 参数</h1><ul>
+<li><p>串行收集器</p>
+<ul>
+<li>-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。</li>
+</ul>
+</li>
+<li><p>并行收集</p>
+<ul>
+<li>-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。</li>
+<li>-XX:ParallelGCThreads 限制线程数量。</li>
+</ul>
+</li>
+<li><p>Parallel收集器</p>
+<ul>
+<li>新生代复制算法，老年代标记-压缩算法  </li>
+<li>-XX:+UseParallelGC  :  使用Parallel收集器+老年带串行</li>
+<li>-XX:+UseParallelOldGC: 使用Parallel收集器+并行老年带。</li>
+</ul>
+</li>
+<li><p>CMS收集器</p>
+<ul>
+<li>Concurrent Mark Sweep 并发标记清除算法。</li>
+<li>标记-清除算法。</li>
+<li>并发阶段降低吞吐量。</li>
+<li>老年代收集器。</li>
+<li>和应用程序一起执行。</li>
+<li>-XX:+UseConcMarkSweepGC 打开CMS收集器  新生代使用并行收集器，老年带使用CMS+串行收集器</li>
+<li>标记压缩算法，不会产生碎片。CMS是并发执行，所以他不能用标记压缩算法，得用标记清理，标记压缩要移动内存位置。</li>
+<li>-XX:+ UserCMSCompactAtFullCollection  在一次full GC后，进行一次整理，整理过程独占，会引起停顿时间变长。</li>
+<li>-XX:+CMSFullGCsBeforeCompaction  设置进行几次Full GC后，进行一次碎片整理。</li>
+<li>-XX:ParallelCMSThreads  设定CMS的线程数量。</li>
+</ul>
+<h1 id="减轻GC压力"><a href="#减轻GC压力" class="headerlink" title="减轻GC压力"></a>减轻GC压力</h1></li>
+<li><p>性能测试工具  JMeter</p>
+</li>
+<li><p>JVM尽量会维持在很小的堆上来进行操作，这样GC次数会增多，所以可以观察下这个项目最小的堆内存是多少，然后给设置一个最小堆，这样就会减少堆的GC次数。</p>
+</li>
+<li><p>如果没有指定，默认是串行收集器</p>
+</li>
+<li><p>jdk6和jdk7，对性能都会不一样。7好一点。</p>
+<p>​    </p>
+<p>​</p>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你来看我<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/22/GC收集器算法/" class="archive-article-date">
-  	<time datetime="2017-07-22T14:54:07.858Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/22/GC收集器算法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/10/Lucene/" class="archive-article-date">
-  	<time datetime="2017-03-10T12:36:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/10/Lucene/">Lucene</a>
-    </h1>
+  
+    <a href="/2017/03/10/Lucene/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Lucene</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="GC收集器算法" data-title="" data-url="http://yoursite.com/2017/07/22/GC收集器算法/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"mondaysee"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Lucene 搜索引擎</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/10/IDEA/" class="archive-article-date">
-  	<time datetime="2017-03-10T12:36:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/10/IDEA/">IDEA</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/27/技术路线/" class="archive-article-date">
-  	<time datetime="2017-02-27T01:23:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/27/技术路线/">技术路线</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">坚持</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/20/新学期/" class="archive-article-date">
-  	<time datetime="2017-02-20T05:27:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/20/新学期/">新学期</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">专注 坚持</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/13/传道受业/" class="archive-article-date">
-  	<time datetime="2017-02-13T05:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/13/传道受业/">传道授业</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/12/新的征途/" class="archive-article-date">
-  	<time datetime="2017-02-12T13:01:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/12/新的征途/">新的征途</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -396,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

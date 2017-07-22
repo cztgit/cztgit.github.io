@@ -133,6 +133,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-GC收集器算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: GC 参数<br>date: 2017-02-13 13:24:09<br>tags:</p>
+<p><img src="/images/Lucene.jpg" alt=""></p>
+<h1 id="GC-参数"><a href="#GC-参数" class="headerlink" title="GC 参数"></a>GC 参数</h1><ul>
+<li><p>串行收集器</p>
+<ul>
+<li>-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。</li>
+</ul>
+</li>
+<li><p>并行收集</p>
+<ul>
+<li>-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。</li>
+<li>-XX:ParallelGCThreads 限制线程数量。</li>
+</ul>
+</li>
+<li><p>Parallel收集器</p>
+<ul>
+<li>新生代复制算法，老年代标记-压缩算法  </li>
+<li>-XX:+UseParallelGC  :  使用Parallel收集器+老年带串行</li>
+<li>-XX:+UseParallelOldGC: 使用Parallel收集器+并行老年带。</li>
+</ul>
+</li>
+<li><p>CMS收集器</p>
+<ul>
+<li>Concurrent Mark Sweep 并发标记清除算法。</li>
+<li>标记-清除算法。</li>
+<li>并发阶段降低吞吐量。</li>
+<li>老年代收集器。</li>
+<li>和应用程序一起执行。</li>
+<li>-XX:+UseConcMarkSweepGC 打开CMS收集器  新生代使用并行收集器，老年带使用CMS+串行收集器</li>
+<li>标记压缩算法，不会产生碎片。CMS是并发执行，所以他不能用标记压缩算法，得用标记清理，标记压缩要移动内存位置。</li>
+<li>-XX:+ UserCMSCompactAtFullCollection  在一次full GC后，进行一次整理，整理过程独占，会引起停顿时间变长。</li>
+<li>-XX:+CMSFullGCsBeforeCompaction  设置进行几次Full GC后，进行一次碎片整理。</li>
+<li>-XX:ParallelCMSThreads  设定CMS的线程数量。</li>
+</ul>
+<h1 id="减轻GC压力"><a href="#减轻GC压力" class="headerlink" title="减轻GC压力"></a>减轻GC压力</h1></li>
+<li><p>性能测试工具  JMeter</p>
+</li>
+<li><p>JVM尽量会维持在很小的堆上来进行操作，这样GC次数会增多，所以可以观察下这个项目最小的堆内存是多少，然后给设置一个最小堆，这样就会减少堆的GC次数。</p>
+</li>
+<li><p>如果没有指定，默认是串行收集器</p>
+</li>
+<li><p>jdk6和jdk7，对性能都会不一样。7好一点。</p>
+<p>​    </p>
+<p>​</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/22/GC收集器算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Lucene" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

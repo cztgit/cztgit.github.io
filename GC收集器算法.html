@@ -8,36 +8,66 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>tiemuzhen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: IDEA使用方法date: 2017-02-13 13:24:09tags:
+  <meta name="description" content="title: GC 参数date: 2017-02-13 13:24:09tags:
 
-IDEA使用方法在Maven下面
-导入项目
-检查Maven是否配置ok，包括Maven的路径还有Repo路径。
-修改编码
-如果程序需要的jar包全都下载好，项目就完整的出来了，然后在view里面找到Tools Window-&amp;gt;找到database还有Maven Project，在Maven Proj">
+GC 参数
+串行收集器
+
+-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
+
+
+并行收集
+
+-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。
+-XX:ParallelGCThreads 限制线程数量。
+
+
+Parallel收集器
+
+新生">
 <meta property="og:type" content="website">
 <meta property="og:title" content="tiemuzhen">
-<meta property="og:url" content="http://yoursite.com/IDEA使用方法.html">
+<meta property="og:url" content="http://yoursite.com/GC收集器算法.html">
 <meta property="og:site_name" content="tiemuzhen">
-<meta property="og:description" content="title: IDEA使用方法date: 2017-02-13 13:24:09tags:
+<meta property="og:description" content="title: GC 参数date: 2017-02-13 13:24:09tags:
 
-IDEA使用方法在Maven下面
-导入项目
-检查Maven是否配置ok，包括Maven的路径还有Repo路径。
-修改编码
-如果程序需要的jar包全都下载好，项目就完整的出来了，然后在view里面找到Tools Window-&amp;gt;找到database还有Maven Project，在Maven Proj">
-<meta property="og:image" content="http://yoursite.com/images/idea.jpg">
-<meta property="og:updated_time" content="2017-03-10T12:29:43.274Z">
+GC 参数
+串行收集器
+
+-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
+
+
+并行收集
+
+-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。
+-XX:ParallelGCThreads 限制线程数量。
+
+
+Parallel收集器
+
+新生">
+<meta property="og:image" content="http://yoursite.com/images/Lucene.jpg">
+<meta property="og:updated_time" content="2017-07-22T14:53:28.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tiemuzhen">
-<meta name="twitter:description" content="title: IDEA使用方法date: 2017-02-13 13:24:09tags:
+<meta name="twitter:description" content="title: GC 参数date: 2017-02-13 13:24:09tags:
 
-IDEA使用方法在Maven下面
-导入项目
-检查Maven是否配置ok，包括Maven的路径还有Repo路径。
-修改编码
-如果程序需要的jar包全都下载好，项目就完整的出来了，然后在view里面找到Tools Window-&amp;gt;找到database还有Maven Project，在Maven Proj">
-<meta name="twitter:image" content="http://yoursite.com/images/idea.jpg">
+GC 参数
+串行收集器
+
+-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
+
+
+并行收集
+
+-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。
+-XX:ParallelGCThreads 限制线程数量。
+
+
+Parallel收集器
+
+新生">
+<meta name="twitter:image" content="http://yoursite.com/images/Lucene.jpg">
   
     <link rel="alternative" href="/atom.xml" title="tiemuzhen" type="application/atom+xml">
   
@@ -160,15 +190,51 @@ IDEA使用方法在Maven下面
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: IDEA使用方法<br>date: 2017-02-13 13:24:09<br>tags:</p>
-<p><img src="/images/idea.jpg" alt=""></p>
-<h1 id="IDEA使用方法在Maven下面"><a href="#IDEA使用方法在Maven下面" class="headerlink" title="IDEA使用方法在Maven下面"></a>IDEA使用方法在Maven下面</h1><ul>
-<li>导入项目</li>
-<li>检查Maven是否配置ok，包括Maven的路径还有Repo路径。</li>
-<li>修改编码</li>
-<li>如果程序需要的jar包全都下载好，项目就完整的出来了，然后在view里面找到Tools Window-&gt;找到database还有Maven Project，在Maven Project里面，你就可以看到你所依赖的jar包。</li>
-<li>然后添加下Facets，添加Spring。</li>
-<li>添加数据库，最后要在Maven Project里面先clean一下，在install一下。</li>
+        <p>title: GC 参数<br>date: 2017-02-13 13:24:09<br>tags:</p>
+<p><img src="/images/Lucene.jpg" alt=""></p>
+<h1 id="GC-参数"><a href="#GC-参数" class="headerlink" title="GC 参数"></a>GC 参数</h1><ul>
+<li><p>串行收集器</p>
+<ul>
+<li>-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。</li>
+</ul>
+</li>
+<li><p>并行收集</p>
+<ul>
+<li>-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。</li>
+<li>-XX:ParallelGCThreads 限制线程数量。</li>
+</ul>
+</li>
+<li><p>Parallel收集器</p>
+<ul>
+<li>新生代复制算法，老年代标记-压缩算法  </li>
+<li>-XX:+UseParallelGC  :  使用Parallel收集器+老年带串行</li>
+<li>-XX:+UseParallelOldGC: 使用Parallel收集器+并行老年带。</li>
+</ul>
+</li>
+<li><p>CMS收集器</p>
+<ul>
+<li>Concurrent Mark Sweep 并发标记清除算法。</li>
+<li>标记-清除算法。</li>
+<li>并发阶段降低吞吐量。</li>
+<li>老年代收集器。</li>
+<li>和应用程序一起执行。</li>
+<li>-XX:+UseConcMarkSweepGC 打开CMS收集器  新生代使用并行收集器，老年带使用CMS+串行收集器</li>
+<li>标记压缩算法，不会产生碎片。CMS是并发执行，所以他不能用标记压缩算法，得用标记清理，标记压缩要移动内存位置。</li>
+<li>-XX:+ UserCMSCompactAtFullCollection  在一次full GC后，进行一次整理，整理过程独占，会引起停顿时间变长。</li>
+<li>-XX:+CMSFullGCsBeforeCompaction  设置进行几次Full GC后，进行一次碎片整理。</li>
+<li>-XX:ParallelCMSThreads  设定CMS的线程数量。</li>
+</ul>
+<h1 id="减轻GC压力"><a href="#减轻GC压力" class="headerlink" title="减轻GC压力"></a>减轻GC压力</h1></li>
+<li><p>性能测试工具  JMeter</p>
+</li>
+<li><p>JVM尽量会维持在很小的堆上来进行操作，这样GC次数会增多，所以可以观察下这个项目最小的堆内存是多少，然后给设置一个最小堆，这样就会减少堆的GC次数。</p>
+</li>
+<li><p>如果没有指定，默认是串行收集器</p>
+</li>
+<li><p>jdk6和jdk7，对性能都会不一样。7好一点。</p>
+<p>​    </p>
+<p>​</p>
+</li>
 </ul>
 
       
@@ -249,7 +315,7 @@ IDEA使用方法在Maven下面
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/IDEA使用方法.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/GC收集器算法.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,7 +335,7 @@ IDEA使用方法在Maven下面
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="" data-url="http://yoursite.com/IDEA使用方法.html"></div>
+	<div class="ds-thread" data-thread-key="undefined" data-title="" data-url="http://yoursite.com/GC收集器算法.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

@@ -6,67 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>tiemuzhen</title>
+  <title>类装载器 | tiemuzhen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: GC 参数date: 2017-02-13 13:24:09tags:
-
-GC 参数
-串行收集器
-
--XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
-
-
-并行收集
-
--XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。
--XX:ParallelGCThreads 限制线程数量。
-
-
-Parallel收集器
-
-新生">
+  <meta name="description" content="链接
+验证 ： 保证Class 流的格式正确的。文件格式验证，元数据认证，字节码认证，符号引用验证。
+准备：public static int v = 1；  在准备阶段，v = 0；的。如果public static final int v= 1；在准备阶段就是1.
+解析： 符号引用替换直接引用。 
+符号引用 引用对象不一定被加载。
+直接引用  指针活地址偏移量。 引用对象一定在内存。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="tiemuzhen">
-<meta property="og:url" content="http://yoursite.com/GC收集器算法.html">
+<meta property="og:title" content="类装载器">
+<meta property="og:url" content="http://yoursite.com/类装载器.html">
 <meta property="og:site_name" content="tiemuzhen">
-<meta property="og:description" content="title: GC 参数date: 2017-02-13 13:24:09tags:
-
-GC 参数
-串行收集器
-
--XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
-
-
-并行收集
-
--XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。
--XX:ParallelGCThreads 限制线程数量。
-
-
-Parallel收集器
-
-新生">
+<meta property="og:description" content="链接
+验证 ： 保证Class 流的格式正确的。文件格式验证，元数据认证，字节码认证，符号引用验证。
+准备：public static int v = 1；  在准备阶段，v = 0；的。如果public static final int v= 1；在准备阶段就是1.
+解析： 符号引用替换直接引用。 
+符号引用 引用对象不一定被加载。
+直接引用  指针活地址偏移量。 引用对象一定在内存。">
 <meta property="og:image" content="http://yoursite.com/images/Lucene.jpg">
-<meta property="og:updated_time" content="2017-07-22T14:53:28.157Z">
+<meta property="og:updated_time" content="2017-07-22T15:39:42.593Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tiemuzhen">
-<meta name="twitter:description" content="title: GC 参数date: 2017-02-13 13:24:09tags:
-
-GC 参数
-串行收集器
-
--XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
-
-
-并行收集
-
--XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。
--XX:ParallelGCThreads 限制线程数量。
-
-
-Parallel收集器
-
-新生">
+<meta name="twitter:title" content="类装载器">
+<meta name="twitter:description" content="链接
+验证 ： 保证Class 流的格式正确的。文件格式验证，元数据认证，字节码认证，符号引用验证。
+准备：public static int v = 1；  在准备阶段，v = 0；的。如果public static final int v= 1；在准备阶段就是1.
+解析： 符号引用替换直接引用。 
+符号引用 引用对象不一定被加载。
+直接引用  指针活地址偏移量。 引用对象一定在内存。">
 <meta name="twitter:image" content="http://yoursite.com/images/Lucene.jpg">
   
     <link rel="alternative" href="/atom.xml" title="tiemuzhen" type="application/atom+xml">
@@ -188,54 +155,47 @@ Parallel收集器
             <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      类装载器
+    </h1>
+  
+
+        
+        <a href="/类装载器.html" class="archive-article-date">
+  	<time datetime="2017-02-13T05:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: GC 参数<br>date: 2017-02-13 13:24:09<br>tags:</p>
-<p><img src="/images/Lucene.jpg" alt=""></p>
-<h1 id="GC-参数"><a href="#GC-参数" class="headerlink" title="GC 参数"></a>GC 参数</h1><ul>
-<li><p>串行收集器</p>
-<ul>
-<li>-XX:+UseSerialGC : 在新生代和老年带使用串行收集器。</li>
+        <p><img src="/images/Lucene.jpg" alt=""></p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><ul>
+<li>验证 ： 保证Class 流的格式正确的。文件格式验证，元数据认证，字节码认证，符号引用验证。</li>
+<li>准备：public static int v = 1；  在准备阶段，v = 0；的。如果public static final int v= 1；在准备阶段就是1.</li>
+<li>解析： 符号引用替换直接引用。 <ul>
+<li>符号引用 引用对象不一定被加载。</li>
+<li>直接引用  指针活地址偏移量。 引用对象一定在内存。</li>
 </ul>
 </li>
-<li><p>并行收集</p>
-<ul>
-<li>-XX:+UseParNewGC  并行收集器，只影响新生代收集。 复制算法，多线程，需要多线程支持。</li>
-<li>-XX:ParallelGCThreads 限制线程数量。</li>
+</ul>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><ul>
+<li>执行类构造器<ul>
+<li>static 变量赋值语句</li>
+<li>static{} 语句</li>
 </ul>
 </li>
-<li><p>Parallel收集器</p>
-<ul>
-<li>新生代复制算法，老年代标记-压缩算法  </li>
-<li>-XX:+UseParallelGC  :  使用Parallel收集器+老年带串行</li>
-<li>-XX:+UseParallelOldGC: 使用Parallel收集器+并行老年带。</li>
 </ul>
-</li>
-<li><p>CMS收集器</p>
-<ul>
-<li>Concurrent Mark Sweep 并发标记清除算法。</li>
-<li>标记-清除算法。</li>
-<li>并发阶段降低吞吐量。</li>
-<li>老年代收集器。</li>
-<li>和应用程序一起执行。</li>
-<li>-XX:+UseConcMarkSweepGC 打开CMS收集器  新生代使用并行收集器，老年带使用CMS+串行收集器</li>
-<li>标记压缩算法，不会产生碎片。CMS是并发执行，所以他不能用标记压缩算法，得用标记清理，标记压缩要移动内存位置。</li>
-<li>-XX:+ UserCMSCompactAtFullCollection  在一次full GC后，进行一次整理，整理过程独占，会引起停顿时间变长。</li>
-<li>-XX:+CMSFullGCsBeforeCompaction  设置进行几次Full GC后，进行一次碎片整理。</li>
-<li>-XX:ParallelCMSThreads  设定CMS的线程数量。</li>
+<h1 id="类装载器ClassLoader"><a href="#类装载器ClassLoader" class="headerlink" title="类装载器ClassLoader"></a>类装载器ClassLoader</h1><ul>
+<li>BootStrap 启动   rt.jar</li>
+<li>Extension 扩展   lib/ext/*.jar</li>
+<li>App  </li>
+<li>Custom </li>
 </ul>
-<h1 id="减轻GC压力"><a href="#减轻GC压力" class="headerlink" title="减轻GC压力"></a>减轻GC压力</h1></li>
-<li><p>性能测试工具  JMeter</p>
-</li>
-<li><p>JVM尽量会维持在很小的堆上来进行操作，这样GC次数会增多，所以可以观察下这个项目最小的堆内存是多少，然后给设置一个最小堆，这样就会减少堆的GC次数。</p>
-</li>
-<li><p>如果没有指定，默认是串行收集器</p>
-</li>
-<li><p>jdk6和jdk7，对性能都会不一样。7好一点。</p>
-<p>​    </p>
-<p>​</p>
-</li>
-</ul>
+<p>自底向上检测是否加载。加载是由顶向下。</p>
 
       
 
@@ -315,7 +275,7 @@ Parallel收集器
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/GC收集器算法.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/类装载器.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,7 +295,7 @@ Parallel收集器
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="" data-url="http://yoursite.com/GC收集器算法.html"></div>
+	<div class="ds-thread" data-thread-key="undefined" data-title="类装载器" data-url="http://yoursite.com/类装载器.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

@@ -6,11 +6,9 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>tiemuzhen</title>
+  <title>GC参数 | tiemuzhen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: GC 参数date: 2017-02-13 13:24:09tags:JVM GC
-
-GC 参数
+  <meta name="description" content="GC 参数
 串行收集器
 
 -XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
@@ -22,14 +20,16 @@ GC 参数
 -XX:ParallelGCThreads 限制线程数量。
 
 
-Parallel收">
+Parallel收集器
+
+新生代复制算法，老年代标记-压缩算法  
+
+-XX:+UseParallelGC  :">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tiemuzhen">
-<meta property="og:url" content="http://yoursite.com/2017/07/22/GC收集器算法/index.html">
+<meta property="og:title" content="GC参数">
+<meta property="og:url" content="http://yoursite.com/2017/07/10/GC收集器算法/index.html">
 <meta property="og:site_name" content="tiemuzhen">
-<meta property="og:description" content="title: GC 参数date: 2017-02-13 13:24:09tags:JVM GC
-
-GC 参数
+<meta property="og:description" content="GC 参数
 串行收集器
 
 -XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
@@ -41,14 +41,16 @@ GC 参数
 -XX:ParallelGCThreads 限制线程数量。
 
 
-Parallel收">
+Parallel收集器
+
+新生代复制算法，老年代标记-压缩算法  
+
+-XX:+UseParallelGC  :">
 <meta property="og:image" content="http://yoursite.com/images/Lucene.jpg">
-<meta property="og:updated_time" content="2017-07-22T14:57:05.194Z">
+<meta property="og:updated_time" content="2017-07-22T14:58:44.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tiemuzhen">
-<meta name="twitter:description" content="title: GC 参数date: 2017-02-13 13:24:09tags:JVM GC
-
-GC 参数
+<meta name="twitter:title" content="GC参数">
+<meta name="twitter:description" content="GC 参数
 串行收集器
 
 -XX:+UseSerialGC : 在新生代和老年带使用串行收集器。
@@ -60,7 +62,11 @@ GC 参数
 -XX:ParallelGCThreads 限制线程数量。
 
 
-Parallel收">
+Parallel收集器
+
+新生代复制算法，老年代标记-压缩算法  
+
+-XX:+UseParallelGC  :">
 <meta name="twitter:image" content="http://yoursite.com/images/Lucene.jpg">
   
     <link rel="alternative" href="/atom.xml" title="tiemuzhen" type="application/atom+xml">
@@ -182,10 +188,24 @@ Parallel收">
             <article id="post-GC收集器算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      GC参数
+    </h1>
+  
+
+        
+        <a href="/2017/07/10/GC收集器算法/" class="archive-article-date">
+  	<time datetime="2017-07-10T12:36:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: GC 参数<br>date: 2017-02-13 13:24:09<br>tags:JVM GC</p>
-<p><img src="/images/Lucene.jpg" alt=""></p>
+        <p><img src="/images/Lucene.jpg" alt=""></p>
 <h1 id="GC-参数"><a href="#GC-参数" class="headerlink" title="GC 参数"></a>GC 参数</h1><ul>
 <li><p>串行收集器</p>
 <ul>
@@ -263,6 +283,17 @@ Parallel收">
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GC JVM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -313,7 +344,7 @@ Parallel收">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/22/GC收集器算法/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/10/GC收集器算法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -343,7 +374,7 @@ Parallel收">
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="GC收集器算法" data-title="" data-url="http://yoursite.com/2017/07/22/GC收集器算法/"></div>
+	<div class="ds-thread" data-thread-key="GC收集器算法" data-title="GC参数" data-url="http://yoursite.com/2017/07/10/GC收集器算法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -481,6 +512,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">专注 坚持</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GC JVM</a>
               </li>
             
             <div class="clearfix"></div>

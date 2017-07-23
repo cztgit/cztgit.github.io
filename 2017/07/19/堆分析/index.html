@@ -24,7 +24,7 @@ Exception in  thread “main” java.lang.OutOfMemeryError: Unable to create new
 <meta property="og:image" content="http://yoursite.com/\images\内存图.png">
 <meta property="og:image" content="http://yoursite.com/\images\支配树.png">
 <meta property="og:image" content="http://yoursite.com/\images\浅堆深堆.png">
-<meta property="og:updated_time" content="2017-07-23T08:45:24.738Z">
+<meta property="og:updated_time" content="2017-07-23T14:28:07.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆分析">
 <meta name="twitter:description" content="堆溢出
@@ -174,10 +174,9 @@ Exception in  thread “main” java.lang.OutOfMemeryError: Unable to create new
 <li>PermGen space 永久区溢出  增大  永久区，运行回收</li>
 <li>Exception in  thread “main” java.lang.OutOfMemeryError: Unable to create new native thread   栈空间不足，需要解决减少堆空间，减少栈空间。</li>
 <li>直接内存溢出  ByteBuffer.allocateDirect()  无法从操作系统获得足够的空间。</li>
-<li>at sun.misc.Unsafe.allocateMemory</li>
+<li>at sun.misc.Unsafe.allocateMemory<a id="more"></a></li>
 </ul>
 <p><img src="\images\内存图.png" alt="内存图"></p>
-<a id="more"></a>
 <h1 id="MAT使用基础"><a href="#MAT使用基础" class="headerlink" title="MAT使用基础"></a>MAT使用基础</h1><p><img src="\images\支配树.png" alt="支配树"></p>
 <ul>
 <li><p>支配者被回收，被支配对象都被回收。</p>

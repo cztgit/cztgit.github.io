@@ -6,34 +6,79 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>类装载器 | tiemuzhen</title>
+  <title>性能监控工具 | tiemuzhen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="链接
-验证 ： 保证Class 流的格式正确的。文件格式验证，元数据认证，字节码认证，符号引用验证。
-准备：public static int v = 1；  在准备阶段，v = 0；的。如果public static final int v= 1；在准备阶段就是1.
-解析： 符号引用替换直接引用。 
-符号引用 引用对象不一定被加载。
-直接引用  指针活地址偏移量。 引用对象一定在内存。">
+  <meta name="description" content="top
+各种cpu情况
+
+vmstat
+统计CPu内存，swap情况还有IO等情况。
+
+pidstat
+监控进程
+pidstat -t  显示线程
+pidstat -p  -t -d  显示io情况
+
+pslist
+命令行工具
+自耦东华数据收集
+显示Java程序运行情况
+
+JAVA 自带工具
+jps:  列出java进程，类似ps命令
+-q 进程id号
+-m   传递给main函数的参数
+-l">
 <meta property="og:type" content="website">
-<meta property="og:title" content="类装载器">
-<meta property="og:url" content="http://yoursite.com/类装载器.html">
+<meta property="og:title" content="性能监控工具">
+<meta property="og:url" content="http://yoursite.com/性能监控工具.html">
 <meta property="og:site_name" content="tiemuzhen">
-<meta property="og:description" content="链接
-验证 ： 保证Class 流的格式正确的。文件格式验证，元数据认证，字节码认证，符号引用验证。
-准备：public static int v = 1；  在准备阶段，v = 0；的。如果public static final int v= 1；在准备阶段就是1.
-解析： 符号引用替换直接引用。 
-符号引用 引用对象不一定被加载。
-直接引用  指针活地址偏移量。 引用对象一定在内存。">
+<meta property="og:description" content="top
+各种cpu情况
+
+vmstat
+统计CPu内存，swap情况还有IO等情况。
+
+pidstat
+监控进程
+pidstat -t  显示线程
+pidstat -p  -t -d  显示io情况
+
+pslist
+命令行工具
+自耦东华数据收集
+显示Java程序运行情况
+
+JAVA 自带工具
+jps:  列出java进程，类似ps命令
+-q 进程id号
+-m   传递给main函数的参数
+-l">
 <meta property="og:image" content="http://yoursite.com/images/Lucene.jpg">
-<meta property="og:updated_time" content="2017-07-22T15:39:42.593Z">
+<meta property="og:updated_time" content="2017-07-23T02:12:02.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类装载器">
-<meta name="twitter:description" content="链接
-验证 ： 保证Class 流的格式正确的。文件格式验证，元数据认证，字节码认证，符号引用验证。
-准备：public static int v = 1；  在准备阶段，v = 0；的。如果public static final int v= 1；在准备阶段就是1.
-解析： 符号引用替换直接引用。 
-符号引用 引用对象不一定被加载。
-直接引用  指针活地址偏移量。 引用对象一定在内存。">
+<meta name="twitter:title" content="性能监控工具">
+<meta name="twitter:description" content="top
+各种cpu情况
+
+vmstat
+统计CPu内存，swap情况还有IO等情况。
+
+pidstat
+监控进程
+pidstat -t  显示线程
+pidstat -p  -t -d  显示io情况
+
+pslist
+命令行工具
+自耦东华数据收集
+显示Java程序运行情况
+
+JAVA 自带工具
+jps:  列出java进程，类似ps命令
+-q 进程id号
+-m   传递给main函数的参数
+-l">
 <meta name="twitter:image" content="http://yoursite.com/images/Lucene.jpg">
   
     <link rel="alternative" href="/atom.xml" title="tiemuzhen" type="application/atom+xml">
@@ -159,12 +204,12 @@
         
   
     <h1 class="article-title" itemprop="name">
-      类装载器
+      性能监控工具
     </h1>
   
 
         
-        <a href="/类装载器.html" class="archive-article-date">
+        <a href="/性能监控工具.html" class="archive-article-date">
   	<time datetime="2017-02-13T05:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
 </a>
         
@@ -173,29 +218,67 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/images/Lucene.jpg" alt=""></p>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><ul>
-<li>验证 ： 保证Class 流的格式正确的。文件格式验证，元数据认证，字节码认证，符号引用验证。</li>
-<li>准备：public static int v = 1；  在准备阶段，v = 0；的。如果public static final int v= 1；在准备阶段就是1.</li>
-<li>解析： 符号引用替换直接引用。 <ul>
-<li>符号引用 引用对象不一定被加载。</li>
-<li>直接引用  指针活地址偏移量。 引用对象一定在内存。</li>
+<h1 id="top"><a href="#top" class="headerlink" title="top"></a>top</h1><ul>
+<li>各种cpu情况</li>
+</ul>
+<h1 id="vmstat"><a href="#vmstat" class="headerlink" title="vmstat"></a>vmstat</h1><ul>
+<li>统计CPu内存，swap情况还有IO等情况。</li>
+</ul>
+<h1 id="pidstat"><a href="#pidstat" class="headerlink" title="pidstat"></a>pidstat</h1><ul>
+<li>监控进程</li>
+<li>pidstat -t  显示线程</li>
+<li>pidstat -p  -t -d  显示io情况</li>
+</ul>
+<h1 id="pslist"><a href="#pslist" class="headerlink" title="pslist"></a>pslist</h1><ul>
+<li>命令行工具</li>
+<li>自耦东华数据收集</li>
+<li>显示Java程序运行情况</li>
+</ul>
+<h1 id="JAVA-自带工具"><a href="#JAVA-自带工具" class="headerlink" title="JAVA 自带工具"></a>JAVA 自带工具</h1><ul>
+<li>jps:  列出java进程，类似ps命令<ul>
+<li>-q 进程id号</li>
+<li>-m   传递给main函数的参数</li>
+<li>-l  显示路径</li>
+<li>-v 显示传第给jvm的参数</li>
+</ul>
+</li>
+<li>jdb.exe</li>
+<li>jhat.exe</li>
+<li>jinfo.exe<ul>
+<li>查看java 应用程序的扩展参数</li>
+<li>-flag<name>:  打印指定JVM的参数</name></li>
+</ul>
+</li>
+<li>jmap.exe<ul>
+<li>生成java应用程序的堆快照和对象的统计信息</li>
+<li>jmap -histo 2972 &gt; C:\s.txt</li>
+<li>jmap -dump:format=b,file=c:\heap.hprof 2972  输出堆信息</li>
+</ul>
+</li>
+<li>jstack.exe<ul>
+<li>打印线程dump</li>
+<li>jstack 120 &gt;&gt; c:\a.txt</li>
+</ul>
+</li>
+<li>JConsole<ul>
+<li>图形化监控工具</li>
+<li>可以查看Java应用程序运行概况。</li>
+</ul>
+</li>
+<li>Visual VM<ul>
+<li>图形诊断和性能监控可视化工具。</li>
 </ul>
 </li>
 </ul>
-<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><ul>
-<li>执行类构造器<ul>
-<li>static 变量赋值语句</li>
-<li>static{} 语句</li>
+<h1 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h1><ul>
+<li>问题是程序卡死，没有预期输出<ul>
+<li>jps 查看程序的pid</li>
+<li>top 查看cpu的占用情况，看到有个进程利用cpu达到100%</li>
+<li>pidstat -p 3455 1 3 -u -t   查看线程的使用情况</li>
+<li>jstack  3455 ，找到线程，可以定位具体的在哪个位置。</li>
 </ul>
 </li>
 </ul>
-<h1 id="类装载器ClassLoader"><a href="#类装载器ClassLoader" class="headerlink" title="类装载器ClassLoader"></a>类装载器ClassLoader</h1><ul>
-<li>BootStrap 启动   rt.jar</li>
-<li>Extension 扩展   lib/ext/*.jar</li>
-<li>App  </li>
-<li>Custom </li>
-</ul>
-<p>自底向上检测是否加载。加载是由顶向下。</p>
 
       
 
@@ -275,7 +358,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/类装载器.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/性能监控工具.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -295,7 +378,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="类装载器" data-url="http://yoursite.com/类装载器.html"></div>
+	<div class="ds-thread" data-thread-key="undefined" data-title="性能监控工具" data-url="http://yoursite.com/性能监控工具.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

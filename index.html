@@ -735,6 +735,73 @@
 
 
   
+    <article id="post-堆分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/13/堆分析/">堆分析</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/13/堆分析/" class="archive-article-date">
+  	<time datetime="2017-02-13T05:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/Lucene.jpg" alt=""></p>
+<h1 id="堆溢出"><a href="#堆溢出" class="headerlink" title="堆溢出"></a>堆溢出</h1><ul>
+<li>PermGen space 永久区溢出  增大  永久区，运行回收</li>
+<li>Exception in  thread “main” java.lang.OutOfMemeryError: Unable to create new native thread   栈空间不足，需要解决减少堆空间，减少栈空间。</li>
+<li>直接内存溢出  ByteBuffer.allocateDirect()  无法从操作系统获得足够的空间。</li>
+<li>at sun.misc.Unsafe.allocateMemory</li>
+</ul>
+<p><img src="F:\Blog\HEXO\source\images\内存图.png" alt="内存图"></p>
+<h1 id="MAT使用基础"><a href="#MAT使用基础" class="headerlink" title="MAT使用基础"></a>MAT使用基础</h1><p><img src="F:\Blog\HEXO\source\images\支配树.png" alt="支配树"></p>
+<ul>
+<li><p>支配者被回收，被支配对象都被回收。</p>
+</li>
+<li><p>MAT可以显示一个对象引用的对象，显示引用这个对象的对象。</p>
+<p>​</p>
+</li>
+</ul>
+<p><img src="F:\Blog\HEXO\source\images\浅堆深堆.png" alt="浅堆深堆"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/13/堆分析/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-新的征途" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

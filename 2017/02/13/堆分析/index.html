@@ -6,79 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>性能监控工具 | tiemuzhen</title>
+  <title>堆分析 | tiemuzhen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="top
-各种cpu情况
-
-vmstat
-统计CPu内存，swap情况还有IO等情况。
-
-pidstat
-监控进程
-pidstat -t  显示线程
-pidstat -p  -t -d  显示io情况
-
-pslist
-命令行工具
-自耦东华数据收集
-显示Java程序运行情况
-
-JAVA 自带工具
-jps:  列出java进程，类似ps命令
--q 进程id号
--m   传递给main函数的参数
--l">
-<meta property="og:type" content="website">
-<meta property="og:title" content="性能监控工具">
-<meta property="og:url" content="http://yoursite.com/性能监控工具.html">
+  <meta name="description" content="堆溢出
+PermGen space 永久区溢出  增大  永久区，运行回收
+Exception in  thread “main” java.lang.OutOfMemeryError: Unable to create new native thread   栈空间不足，需要解决减少堆空间，减少栈空间。
+直接内存溢出  ByteBuffer.allocateDirect()  无法从操作系统获">
+<meta property="og:type" content="article">
+<meta property="og:title" content="堆分析">
+<meta property="og:url" content="http://yoursite.com/2017/02/13/堆分析/index.html">
 <meta property="og:site_name" content="tiemuzhen">
-<meta property="og:description" content="top
-各种cpu情况
-
-vmstat
-统计CPu内存，swap情况还有IO等情况。
-
-pidstat
-监控进程
-pidstat -t  显示线程
-pidstat -p  -t -d  显示io情况
-
-pslist
-命令行工具
-自耦东华数据收集
-显示Java程序运行情况
-
-JAVA 自带工具
-jps:  列出java进程，类似ps命令
--q 进程id号
--m   传递给main函数的参数
--l">
+<meta property="og:description" content="堆溢出
+PermGen space 永久区溢出  增大  永久区，运行回收
+Exception in  thread “main” java.lang.OutOfMemeryError: Unable to create new native thread   栈空间不足，需要解决减少堆空间，减少栈空间。
+直接内存溢出  ByteBuffer.allocateDirect()  无法从操作系统获">
 <meta property="og:image" content="http://yoursite.com/images/Lucene.jpg">
-<meta property="og:updated_time" content="2017-07-23T02:12:02.506Z">
+<meta property="og:image" content="http://yoursite.com/F:\Blog\HEXO\source\images\内存图.png">
+<meta property="og:image" content="http://yoursite.com/F:\Blog\HEXO\source\images\支配树.png">
+<meta property="og:image" content="http://yoursite.com/F:\Blog\HEXO\source\images\浅堆深堆.png">
+<meta property="og:updated_time" content="2017-07-23T03:17:14.160Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="性能监控工具">
-<meta name="twitter:description" content="top
-各种cpu情况
-
-vmstat
-统计CPu内存，swap情况还有IO等情况。
-
-pidstat
-监控进程
-pidstat -t  显示线程
-pidstat -p  -t -d  显示io情况
-
-pslist
-命令行工具
-自耦东华数据收集
-显示Java程序运行情况
-
-JAVA 自带工具
-jps:  列出java进程，类似ps命令
--q 进程id号
--m   传递给main函数的参数
--l">
+<meta name="twitter:title" content="堆分析">
+<meta name="twitter:description" content="堆溢出
+PermGen space 永久区溢出  增大  永久区，运行回收
+Exception in  thread “main” java.lang.OutOfMemeryError: Unable to create new native thread   栈空间不足，需要解决减少堆空间，减少栈空间。
+直接内存溢出  ByteBuffer.allocateDirect()  无法从操作系统获">
 <meta name="twitter:image" content="http://yoursite.com/images/Lucene.jpg">
   
     <link rel="alternative" href="/atom.xml" title="tiemuzhen" type="application/atom+xml">
@@ -197,19 +149,19 @@ jps:  列出java进程，类似ps命令
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-堆分析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      性能监控工具
+      堆分析
     </h1>
   
 
         
-        <a href="/性能监控工具.html" class="archive-article-date">
+        <a href="/2017/02/13/堆分析/" class="archive-article-date">
   	<time datetime="2017-02-13T05:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
 </a>
         
@@ -218,67 +170,22 @@ jps:  列出java进程，类似ps命令
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/images/Lucene.jpg" alt=""></p>
-<h1 id="top"><a href="#top" class="headerlink" title="top"></a>top</h1><ul>
-<li>各种cpu情况</li>
+<h1 id="堆溢出"><a href="#堆溢出" class="headerlink" title="堆溢出"></a>堆溢出</h1><ul>
+<li>PermGen space 永久区溢出  增大  永久区，运行回收</li>
+<li>Exception in  thread “main” java.lang.OutOfMemeryError: Unable to create new native thread   栈空间不足，需要解决减少堆空间，减少栈空间。</li>
+<li>直接内存溢出  ByteBuffer.allocateDirect()  无法从操作系统获得足够的空间。</li>
+<li>at sun.misc.Unsafe.allocateMemory</li>
 </ul>
-<h1 id="vmstat"><a href="#vmstat" class="headerlink" title="vmstat"></a>vmstat</h1><ul>
-<li>统计CPu内存，swap情况还有IO等情况。</li>
-</ul>
-<h1 id="pidstat"><a href="#pidstat" class="headerlink" title="pidstat"></a>pidstat</h1><ul>
-<li>监控进程</li>
-<li>pidstat -t  显示线程</li>
-<li>pidstat -p  -t -d  显示io情况</li>
-</ul>
-<h1 id="pslist"><a href="#pslist" class="headerlink" title="pslist"></a>pslist</h1><ul>
-<li>命令行工具</li>
-<li>自耦东华数据收集</li>
-<li>显示Java程序运行情况</li>
-</ul>
-<h1 id="JAVA-自带工具"><a href="#JAVA-自带工具" class="headerlink" title="JAVA 自带工具"></a>JAVA 自带工具</h1><ul>
-<li>jps:  列出java进程，类似ps命令<ul>
-<li>-q 进程id号</li>
-<li>-m   传递给main函数的参数</li>
-<li>-l  显示路径</li>
-<li>-v 显示传第给jvm的参数</li>
-</ul>
+<p><img src="F:\Blog\HEXO\source\images\内存图.png" alt="内存图"></p>
+<h1 id="MAT使用基础"><a href="#MAT使用基础" class="headerlink" title="MAT使用基础"></a>MAT使用基础</h1><p><img src="F:\Blog\HEXO\source\images\支配树.png" alt="支配树"></p>
+<ul>
+<li><p>支配者被回收，被支配对象都被回收。</p>
 </li>
-<li>jdb.exe</li>
-<li>jhat.exe</li>
-<li>jinfo.exe<ul>
-<li>查看java 应用程序的扩展参数</li>
-<li>-flag<name>:  打印指定JVM的参数</name></li>
-</ul>
-</li>
-<li>jmap.exe<ul>
-<li>生成java应用程序的堆快照和对象的统计信息</li>
-<li>jmap -histo 2972 &gt; C:\s.txt</li>
-<li>jmap -dump:format=b,file=c:\heap.hprof 2972  输出堆信息</li>
-</ul>
-</li>
-<li>jstack.exe<ul>
-<li>打印线程dump</li>
-<li>jstack 120 &gt;&gt; c:\a.txt</li>
-</ul>
-</li>
-<li>JConsole<ul>
-<li>图形化监控工具</li>
-<li>可以查看Java应用程序运行概况。</li>
-</ul>
-</li>
-<li>Visual VM<ul>
-<li>图形诊断和性能监控可视化工具。</li>
-</ul>
+<li><p>MAT可以显示一个对象引用的对象，显示引用这个对象的对象。</p>
+<p>​</p>
 </li>
 </ul>
-<h1 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h1><ul>
-<li>问题是程序卡死，没有预期输出<ul>
-<li>jps 查看程序的pid</li>
-<li>top 查看cpu的占用情况，看到有个进程利用cpu达到100%</li>
-<li>pidstat -p 3455 1 3 -u -t   查看线程的使用情况</li>
-<li>jstack  3455 ，找到线程，可以定位具体的在哪个位置。</li>
-</ul>
-</li>
-</ul>
+<p><img src="F:\Blog\HEXO\source\images\浅堆深堆.png" alt="浅堆深堆"></p>
 
       
 
@@ -358,7 +265,7 @@ jps:  列出java进程，类似ps命令
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/性能监控工具.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/13/堆分析/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -370,6 +277,25 @@ jps:  列出java进程，类似ps命令
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/02/13/性能监控工具/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          性能监控工具
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/12/新的征途/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">新的征途</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -378,7 +304,7 @@ jps:  列出java进程，类似ps命令
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="性能监控工具" data-url="http://yoursite.com/性能监控工具.html"></div>
+	<div class="ds-thread" data-thread-key="堆分析" data-title="堆分析" data-url="http://yoursite.com/2017/02/13/堆分析/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -420,7 +346,7 @@ jps:  列出java进程，类似ps命令
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

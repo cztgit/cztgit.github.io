@@ -6,70 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>堆分析 | tiemuzhen</title>
+  <title>Archives: 2017/8 | tiemuzhen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JVM启动流程
-
-PC寄存器 
-
-每个线程拥有一个PC寄存器
-在线程创建时创建
-指向下一条指令的地址
-执行本地方法时，PC的值为undefined
-
-
-方法区
-
-保存类的信息
-类的常量池
-字段，方法信息
-方法字节码
-通常和永久区Perm关联在一起。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="堆分析">
-<meta property="og:url" content="http://yoursite.com/2017/07/28/JVM运行机制/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="tiemuzhen">
+<meta property="og:url" content="http://yoursite.com/archives/2017/08/index.html">
 <meta property="og:site_name" content="tiemuzhen">
-<meta property="og:description" content="JVM启动流程
-
-PC寄存器 
-
-每个线程拥有一个PC寄存器
-在线程创建时创建
-指向下一条指令的地址
-执行本地方法时，PC的值为undefined
-
-
-方法区
-
-保存类的信息
-类的常量池
-字段，方法信息
-方法字节码
-通常和永久区Perm关联在一起。">
-<meta property="og:image" content="http://yoursite.com/images/Lucene.jpg">
-<meta property="og:image" content="http://yoursite.com/images/jvm启动流程.png">
-<meta property="og:image" content="http://yoursite.com/images/堆栈交互.png">
-<meta property="og:updated_time" content="2017-07-30T01:29:57.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="堆分析">
-<meta name="twitter:description" content="JVM启动流程
-
-PC寄存器 
-
-每个线程拥有一个PC寄存器
-在线程创建时创建
-指向下一条指令的地址
-执行本地方法时，PC的值为undefined
-
-
-方法区
-
-保存类的信息
-类的常量池
-字段，方法信息
-方法字节码
-通常和永久区Perm关联在一起。">
-<meta name="twitter:image" content="http://yoursite.com/images/Lucene.jpg">
+<meta name="twitter:title" content="tiemuzhen">
   
     <link rel="alternative" href="/atom.xml" title="tiemuzhen" type="application/atom+xml">
   
@@ -187,227 +131,49 @@ PC寄存器
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JVM运行机制" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      堆分析
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/08/03/ConcurrentMap/" class="archive-article-date">
+  	<time datetime="2017-08-03T08:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/03/ConcurrentMap/">ConcurrentMap</a>
     </h1>
   
 
-        
-        <a href="/2017/07/28/JVM运行机制/" class="archive-article-date">
-  	<time datetime="2017-07-28T08:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/Lucene.jpg" alt=""></p>
-<h1 id="JVM启动流程"><a href="#JVM启动流程" class="headerlink" title="JVM启动流程"></a>JVM启动流程</h1><p><img src="/images/jvm启动流程.png" alt=""></p>
-<ul>
-<li><p>PC寄存器 </p>
-<ul>
-<li>每个线程拥有一个PC寄存器</li>
-<li>在线程创建时创建</li>
-<li>指向下一条指令的地址</li>
-<li>执行本地方法时，PC的值为undefined</li>
-</ul>
-</li>
-<li><p>方法区</p>
-<ul>
-<li>保存类的信息</li>
-<li>类的常量池</li>
-<li>字段，方法信息</li>
-<li>方法字节码</li>
-<li>通常和永久区Perm关联在一起。<a id="more"></a>
-</li>
-</ul>
-</li>
-<li><p>Java堆</p>
-<ul>
-<li>new出来的对象，都在这里。</li>
-</ul>
-</li>
-<li><p>Java栈</p>
-<ul>
-<li>线程私有</li>
-<li>帧中保存方法的局部变量、操作数栈、常量池指针</li>
-<li>每一次方法调用创建一个帧，并压栈</li>
-<li>局部变量表  参数和局部变量</li>
-<li>函数调用组成  帧栈</li>
-<li>操作数栈 </li>
-</ul>
-</li>
-<li><p>堆栈交互</p>
-<p><img src="/images/堆栈交互.png" alt=""></p>
-</li>
-</ul>
-<h1 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h1><ul>
-<li><p>可见性</p>
-<ul>
-<li>一个线程修改了变量，其他线程可以立即知道。</li>
-</ul>
-</li>
-<li><p>保证可见性的方法</p>
-<ul>
-<li>volatile</li>
-<li>synchronized（unlock 之前，写变量值回主存）</li>
-<li>final(一旦初始化完成，其他线程就可见)</li>
-</ul>
-</li>
-<li><p>有序性</p>
-<ul>
-<li><p>线程内，有序</p>
-</li>
-<li><p>线程外，无序。</p>
-<p>​</p>
-</li>
-</ul>
-</li>
-</ul>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你来看我<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/28/JVM运行机制/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/08/03/ConcurrentMap/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ConcurrentMap
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/07/23/性能监控工具/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">性能监控工具</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="JVM运行机制" data-title="堆分析" data-url="http://yoursite.com/2017/07/28/JVM运行机制/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"mondaysee"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -430,8 +196,8 @@ PC寄存器
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
